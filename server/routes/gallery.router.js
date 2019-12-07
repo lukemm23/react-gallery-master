@@ -21,4 +21,5 @@ router.get('/', (req, res) => {
     res.send(galleryItems);
 }); // END GET Route
 
+
 module.exports = router;
