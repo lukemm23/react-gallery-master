@@ -1,0 +1,17 @@
+.isExpanded {
+
+    height: 10rem;
+}
+
+.isHidden {
+    height: 0;
+    overflow: hidden;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+button {
+    margin-bottom: 2rem;
+}
