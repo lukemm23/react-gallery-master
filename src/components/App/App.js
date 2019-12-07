@@ -31,15 +31,15 @@ class App extends Component {
 
   addLike = (id) => {
     axios({
-          method: 'PUT',
-          url: '/gallery/like/'+ id,
-        })
-        .then((response) => {
-          this.getGallery();
-        })
-        .catch((err) => {
-          console.warn(err);
-        })
+      method: 'PUT',
+      url: '/gallery/like/' + id,
+    })
+      .then((response) => {
+        this.getGallery();
+      })
+      .catch((err) => {
+        console.warn(err);
+      })
   }
 
   render() {

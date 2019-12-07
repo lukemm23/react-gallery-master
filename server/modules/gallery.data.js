@@ -23,6 +23,18 @@ const galleryItems = [
         description: 'Photo of a Harley Fatboy Lo in the country side.',
         likes: 0
     },
+    {
+        id: 5,
+        path: 'images/harley-davidson-yhW0qm86dOo-unsplash.jpg',
+        description: 'Photo of a beautiful wheel.',
+        likes: 0
+    },
+    {
+        id: 6,
+        path: 'images/revolt-MCRCX_b3l-s-unsplash.jpg',
+        description: 'Photo of a Harley Fatboy Lo in a garage setting.',
+        likes: 0
+    },
 ];
 
 

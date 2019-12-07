@@ -33,23 +33,23 @@ class GalleryListItem extends Component {
         }
 
         return (
-            
-                
-                <div className="col-md-4">
+
+
+            <div className="col-md-4">
                 <img className={hideImg} onClick={this.clickShowDesc} alt='' src={this.props.gallery.path} />
                 <div className={showClass} >
                     <p onClick={this.clickHideImg}>{this.props.gallery.id}. {this.props.gallery.description}</p>
                 </div>
                 <p onClick={this.clickHideImg}>
-                        {this.props.gallery.likes} people love this!
+                    {this.props.gallery.likes} people love this!
                     </p>
-                
-                    <button className="btn btn-sm btn-dark" onClick={() => this.props.addLike(this.props.gallery.id)} >
-                        Love It!
+
+                <button className="btn btn-sm btn-dark" onClick={() => this.props.addLike(this.props.gallery.id)} >
+                    Love It!
                     </button>
-                    </div>
-                    
-          
+            </div>
+
+
         )
     }
 }
