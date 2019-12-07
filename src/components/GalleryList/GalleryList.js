@@ -7,7 +7,7 @@ class GalleryList extends Component {
     render() {
         const galArray = this.props.gallery.map((item, index) => {
             return (
-                <GalleryListItem key={index} gallery={item} />
+                <GalleryListItem key={index} gallery={item} addLike={this.props.addLike} />
             )
         })
 
@@ -18,5 +18,6 @@ class GalleryList extends Component {
         )
     }
 }
+
 
 export default GalleryList;
