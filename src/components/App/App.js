@@ -29,19 +29,12 @@ class App extends Component {
       })
   }
 
-  // addLike() {
-  //   
-  // }
-
   addLike = (id) => {
-    console.log('btn clicked', id);
     axios({
           method: 'PUT',
-          url: '/like/:'+ id,
-          data: this.state.gallery.likes
+          url: '/gallery/like/'+ id,
         })
         .then((response) => {
-          console.log(response);
           this.getGallery();
         })
         .catch((err) => {
