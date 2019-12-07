@@ -45,9 +45,9 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App container">">
+      <div className="App container">
         <header className="App-header">
-          <h1 className="App-title">Gallery of my Favorite Motorcycles</h1>
+          <h1 className="App-title">Gallery of My Favorite Motorcycles</h1>
         </header>
         <br />
         <p>Gallery goes here</p>

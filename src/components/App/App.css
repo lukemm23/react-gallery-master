@@ -25,3 +25,7 @@ img {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+header {
+  margin-top: 1rem;
+}
