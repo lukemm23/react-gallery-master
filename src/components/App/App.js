@@ -43,6 +43,20 @@ class App extends Component {
       })
   }
 
+  delete = (id) => {
+    axios({
+      method: 'DELETE',
+      url: '/gallery/' + id
+    })
+    .then((response) => {
+      console.log(response);
+      this.getGallery();
+    })
+    .catch((err) => {
+      console.warn(err);
+    })
+  }
+
   render() {
 
     return (
@@ -52,7 +66,7 @@ class App extends Component {
         </header>
         <br />
         <p>Gallery goes here</p>
-        <GalleryList addLike={this.addLike} gallery={this.state.gallery} />
+        <GalleryList addLike={this.addLike} gallery={this.state.gallery} delete={this.delete} />
       </div>
     );
   }

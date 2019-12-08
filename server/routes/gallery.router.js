@@ -9,31 +9,31 @@ router.put('/like/:id', (req, res) => {
     const id = req.params.id;
     const status = req.body.status;
     console.log(status, id);
-    if(!status) {
+    if (!status) {
         return;
     }
     pool.query(`SELECT "likes" FROM "gallery" WHERE "id" = '${id}';`)
-    .then((response) => {
-        console.log(response.rows);
-        let update = response.rows[0].likes + 1;
-         let queryString = `UPDATE "gallery" SET "likes"='${update}' WHERE "id" = $1;`;
-
-    pool.query(queryString, [id])
         .then((response) => {
-            res.sendStatus(200);
-            return;
+            console.log(response.rows);
+            let update = response.rows[0].likes + 1;
+            let queryString = `UPDATE "gallery" SET "likes"='${update}' WHERE "id" = $1;`;
+
+            pool.query(queryString, [id])
+                .then((response) => {
+                    res.sendStatus(200);
+                    return;
+                })
+                .catch((err) => {
+                    console.log(err);
+                    res.sendStatus(500);
+                    return;
+                })
         })
         .catch((err) => {
             console.log(err);
             res.sendStatus(500);
             return;
         })
-    })
-    .catch((err) => {
-        console.log(err);
-        res.sendStatus(500);
-        return;
-    }) 
 }); // END PUT Route
 
 // GET Route
@@ -47,6 +47,21 @@ router.get('/', (req, res) => {
             res.sendStatus(500);
         });
 }); // END GET Route
+
+//DELETE Route
+router.delete('/:id', (req, res) => {
+    // console.log('delete:',req.params.id, req);
+    const Id = req.params.id;
+    const queryString = `DELETE FROM "gallery" WHERE "id" = ${Id};`;
+
+    pool.query(queryString)
+        .then((response) => {
+            res.sendStatus(200);
+        })
+        .catch((err) => {
+            res.sendStatus(500);
+        })
+});
 
 
 
