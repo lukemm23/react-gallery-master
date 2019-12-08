@@ -1,9 +1,17 @@
-# Project Name
+# REACT GALLERY MASTER
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+1. click on image to see descriptions
+2. click "Love It" to like the image
+3. notice love is tracked
+4. click "Delete It" to delete image from database
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This is a weekend solo project that created a full stack web page with react, bootstrap, node, express, 
+sql, using postgres database. 
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/github-finalization-assignment).
+a GET request renders database resources. 
+a PUT request to update likes and re-renders upon update. 
+a DELETE request to delete resources from database. 
+
+email me for any other questions @ lukemm23@gmail.com
