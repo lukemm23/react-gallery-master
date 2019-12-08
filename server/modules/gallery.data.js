@@ -38,5 +38,4 @@ const galleryItems = [
 ];
 
 
-
 module.exports = galleryItems;

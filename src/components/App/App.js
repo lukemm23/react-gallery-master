@@ -29,10 +29,11 @@ class App extends Component {
       })
   }
 
-  addLike = (id) => {
+  addLike = (id, status) => {
     axios({
       method: 'PUT',
       url: '/gallery/like/' + id,
+      data: {status},
     })
       .then((response) => {
         this.getGallery();

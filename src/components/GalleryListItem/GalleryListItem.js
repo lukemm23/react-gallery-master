@@ -44,7 +44,7 @@ class GalleryListItem extends Component {
                     {this.props.gallery.likes} people love this!
                     </p>
 
-                <button className="btn btn-sm btn-dark" onClick={() => this.props.addLike(this.props.gallery.id)} >
+                <button className="btn btn-sm btn-dark" onClick={() => this.props.addLike(this.props.gallery.id, true)} >
                     Love It!
                     </button>
             </div>
