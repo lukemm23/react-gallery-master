@@ -6,6 +6,11 @@ import GalleryList from '../GalleryList/GalleryList';
 class App extends Component {
   state = {
     gallery: [],
+    enteredData: {
+      path: '',
+      description: '',
+      likes: 0,
+    }
   }
 
   componentDidMount() {
@@ -57,6 +62,38 @@ class App extends Component {
     })
   }
 
+  post() {
+    axios({
+      method: 'POST',
+      url: '/gallery',
+      data: this.state.enteredData
+    })
+    .then((response) => {
+      console.log(response);
+      this.getGallery();
+    })
+    .catch((err) => {
+      console.warn(err);
+    })
+  }
+
+  //EVENT HANDLERS
+  onAdd = (event) => {
+    // submit data to server
+    console.log('clicked');
+    this.post();
+  }
+
+  onChangeInput = (event, inputKey) => {
+    console.log(inputKey);
+    this.setState({
+      enteredData: {
+        ...this.state.enteredData,
+        [inputKey]: event.target.value
+      }
+    });
+  }
+
   render() {
 
     return (
@@ -65,6 +102,17 @@ class App extends Component {
           <h1 className="App-title">Gallery of My Favorite Motorcycles</h1>
         </header>
         <br />
+        <input
+              type="text"
+              placeholder="Enter a Image Link"
+              onChange={(event) => this.onChangeInput(event, 'path')}
+            />
+            <input
+              type="text"
+              placeholder="Enter a Description"
+              onChange={(event) => this.onChangeInput(event, 'description')}
+            />
+            <button onClick={this.onAdd}>Add To Gallery</button>
         <p>Gallery goes here</p>
         <GalleryList addLike={this.addLike} gallery={this.state.gallery} delete={this.delete} />
       </div>

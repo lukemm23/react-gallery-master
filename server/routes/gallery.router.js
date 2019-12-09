@@ -63,6 +63,22 @@ router.delete('/:id', (req, res) => {
         })
 });
 
+router.post('/', (req, res) => {
+    const newItem = req.body;
+    const sqlText = `INSERT INTO "gallery" (path, description, likes) VALUES 
+  ($1, $2, $3)`;
+    
+    pool.query(sqlText, [newItem.path, newItem.description, newItem.likes])
+        .then((result) => {
+            console.log(`Added item to the database`, newItem);
+            res.sendStatus(201);
+        })
+        .catch((error) => {
+            console.log(`Error making database query ${sqlText}`, error);
+            res.sendStatus(500); // Good server always responds
+        })
+})
+
 
 
 
