@@ -34,6 +34,13 @@ header {
   text-align: center;
 }
 
-input {
-  margin-right: 1rem;
+
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group-text {
+  background-color: black;
+  color: white
 }

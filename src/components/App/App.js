@@ -99,20 +99,28 @@ class App extends Component {
     return (
       <div className="container">
         <header className="App-header">
-          <h1 className="App-title">Gallery of My Favorite Motorcycles</h1>
+          <h1 className="App-title">Gallery of My Favorite Motorcycle Images</h1>
         </header>
         <br />
-        <input
-              type="text"
-              placeholder="Enter a Image Link"
-              onChange={(event) => this.onChangeInput(event, 'path')}
-            />
-            <input
-              type="text"
-              placeholder="Enter a Description"
-              onChange={(event) => this.onChangeInput(event, 'description')}
-            />
-            <button onClick={this.onAdd}>Add To Gallery</button>
+        <div className="input-group">
+          <div className="input-group-prepend">
+            <span className="input-group-text" onClick={this.onAdd}>Add To Gallery</span>
+          </div>
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Enter a Image Link"
+            onChange={(event) => this.onChangeInput(event, 'path')}
+          />
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Enter a Description"
+            onChange={(event) => this.onChangeInput(event, 'description')}
+          />
+            
+          
+        </div>
         <p>Gallery goes here</p>
         <GalleryList addLike={this.addLike} gallery={this.state.gallery} delete={this.delete} />
       </div>
