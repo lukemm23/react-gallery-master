@@ -7,7 +7,7 @@
 
 ## Screen Shot
 
-![](/public/images/Screen Shot 2019-12-09 at 11.14.16 AM)
+![](/public/images/screenshot.png)
 
 ## Description
 
