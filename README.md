@@ -5,6 +5,10 @@
 3. notice love is tracked
 4. click "Delete It" to delete image from database
 
+## Screen Shot
+
+![](/public/images/Screen Shot 2019-12-09 at 11.14.16 AM)
+
 ## Description
 
 This is a weekend solo project that created a full stack web page with react, bootstrap, node, express, 
