@@ -29,3 +29,7 @@ img {
 header {
   margin-top: 1rem;
 }
+
+.container {
+  text-align: center;
+}
